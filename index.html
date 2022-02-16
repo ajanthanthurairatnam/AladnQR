@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://localhost:54120/DefaultIntegrated.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="fullscreen boxsizing"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	AAP - Location Watch
+</title><meta http-equiv="Cache-Control" content="no-store"><meta http-equiv="Expires" content="0"><link rel="StyleSheet" href="./index_files/Default.css" type="text/css"><link rel="StyleSheet" href="./index_files/DefaultFonts.css" type="text/css"><link rel="StyleSheet" href="./index_files/aap.css" type="text/css">
+    
+    <script language="javascript" type="text/javascript">
+
+        /////////////////////////////////
+        // Launch QR Reader ....
+        /////////////////////////////////
+        function LaunchQRReader() {
+
+            alert("Launch QR Reader");
+
+            window.open("camera.html");
+        }
+
+        ////////////////////////////////
+        // First Thing 
+        ////////////////////////////////
+        function Window_Onload() {
+
+            if(eText != "")
+            {
+                alert(eText);
+            }
+        }
+
+        //QR Reader Call Back Functions
+         function qrcodecallback(response) {             
+             document.getElementById("txt_ContractNo").value = response;             
+         }
+
+         function qrcodeClosecallback(response) {
+             alert('You have closed the QR CODE Reader')
+         }
+        
+    </script>
+    
+    
+</head>
+<body class="fullscreen boxsizing" onload="return Window_Onload();">
+    <form method="post" action="http://localhost:54120/DefaultIntegrated.aspx" id="form1" class="fullscreen boxsizing">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTQ3Nzk0NTU2NA9kFgICAw9kFgICAQ8PZBYCHgpvbmtleXByZXNzBR1yZXR1cm4gZmlsdGVySW5wdXQodGhpcywnbicpO2RkOsarQgZZU9FoB8meHnz/TLNjO7zHEQrLBdS5I8N5Qn4=">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="35AF7295">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAQLdpEG5C3+uFUxAr7FTdoa26LhIbk/Q+hO9r8b6qsdt+fU6QkEaR0CmJWPwZxxyHmO1N1XNFmfsMXJasjxX85j58wy4VVc6O+hwF/LWaafFwTArCjYC/GknCa9OVsPJcQ=">
+</div>
+    
+    <div class="qr_box boxsizing">
+    
+        <table style="width:300px" border="0" align="center" class="qr_Fields" cellpadding="0" cellspacing="0">
+        
+            <tbody><tr>
+                <td style="width:120px"></td>
+                <td style="width:130px"></td>
+                <td style="width:50px"></td>
+            </tr>
+        
+            <tr class="trFields qrScanHide">
+                <td class="label">Contract&nbsp;#</td>
+                <td><input name="txt_ContractNo" type="text" id="txt_ContractNo" onkeypress="return filterInput(this,&#39;n&#39;);" style="width:120px;"></td>
+                <td>
+                    
+<a id="btn-scan-qr"> 
+    <img src="./index_files/qr01.png" alt="QR Icon" width="20px">   
+</a><a>  
+                </a></td>
+            </tr>
+             <tr class="trFields qrScanShow">
+                <td colspan="3" style="width:300px">
+                   
+ <div id="qr-container">
+      <h1>QR Code Scanner</h1>
+      <canvas hidden="" id="qr-canvas"></canvas>
+      <div id="qr-result" hidden="">
+         <span id="qroutputData"></span>
+      </div>
+      <div id="qr-close">
+          <input id="btnCloseQrReader" type="button" value="Close" hidden="">
+      </div>
+  </div>
+<script src="./index_files/qrCodeScanner.js.download"></script>
+<link href="./index_files/qrCodeScanner.css" rel="stylesheet">
+
+                </td>
+             </tr>
+        
+            <tr class="trFields qrScanHide">
+                <td class="label">Car&nbsp;Registration</td>
+                <td><input name="txt_CarRego" type="text" id="txt_CarRego" style="width:120px;"></td>
+                <td></td>
+            </tr>
+            
+            <tr class="trFields qrScanHide">           
+                <td></td>
+                <td><input type="submit" name="btnSearch" value="Search" id="btnSearch" style="width:80px;"></td>
+                <td></td>
+            </tr>
+        
+        </tbody></table>
+    </div>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+var txt_ContractNo = document.all ? document.all["txt_ContractNo"]: document.getElementById("txt_ContractNo") ;
+var txt_CarRego = document.all ? document.all["txt_CarRego"]: document.getElementById("txt_CarRego") ;
+var eText = '';
+//]]>
+</script>
+</form>
+    
+    
+    
+    
+
+
+</body></html>
